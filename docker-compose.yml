@@ -1,0 +1,18 @@
+services:
+  # Reverse proxy + TLS terminator
+  caddy:
+    image: caddy:2.8
+    container_name: reverse-proxy
+    ports:
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - /etc/letsencrypt/live/rtlm.info/fullchain.pem:/server/fullchain.pem:ro
+      - /etc/letsencrypt/live/rtlm.info/privkey.pem:/server/privkey.pem:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
