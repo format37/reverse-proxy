@@ -1,4 +1,4 @@
-service.dnk-technologies.com {
+rtlm.info {
     tls /server/fullchain.pem /server/privkey.pem
 
     # # CBONDS → /cbonds/* (preserve prefix for cookie path scoping)
