@@ -13,9 +13,13 @@ services:
       - caddy_config:/config
     restart: unless-stopped
     networks:
-       mcp-shared:
-         external: true
+      - default
+      - mcp-shared
 
 volumes:
   caddy_data:
   caddy_config:
+
+networks:
+  mcp-shared:
+    external: true
