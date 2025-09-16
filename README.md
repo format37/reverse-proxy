@@ -25,7 +25,12 @@ cd reverse-proxy
 * Update domain / subdomain name in the first line
 * Define required reverse_proxy ports to your services
 
-### 3. Compose
+### 4. Create network
+```bash
+./create-network.sh
+```
+
+### 5. Compose
 ```bash
 ./compose.sh
 ```
